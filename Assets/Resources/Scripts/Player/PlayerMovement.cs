@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour {
 
     void PlaySound() {
         if (Mathf.Abs(speedX) > 0 || Mathf.Abs(speedY) > 0)
-            SoundManager.PlaySound("Steps");
+            SoundManager.Instant.PlaySound(Constant.SFX.Steps);
     }
 
     // Player movement

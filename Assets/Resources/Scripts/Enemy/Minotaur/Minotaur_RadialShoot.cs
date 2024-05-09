@@ -20,6 +20,6 @@ public class Minotaur_RadialShoot : MonoBehaviour {
     }
 
     public void PlayBreathSound() {
-        SoundManager.PlaySound("MinotaurBreath");
+        SoundManager.Instant.PlaySound(Constant.SFX.MinotaurBreath);
     }
 }

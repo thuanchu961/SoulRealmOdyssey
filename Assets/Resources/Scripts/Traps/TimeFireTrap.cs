@@ -44,7 +44,7 @@ public class TimeFireTrap : MonoBehaviour {
         animator.SetBool("Working", true);
         childLight.gameObject.SetActive(true);
 
-        SoundManager.PlaySound("FireShot");
+        SoundManager.Instant.PlaySound(Constant.SFX.FireShot);
 
         if (onCollision) 
             playerHealth.decreaseHealth(damage);

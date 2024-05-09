@@ -18,7 +18,7 @@ public class DialogueTriggerButton : MonoBehaviour {
     void Update() {
         if (Input.GetKeyDown(KeyCode.Q) && Vector2.Distance(transform.position, player.position) < distance && !isActive) {
             isActive = true;
-            SoundManager.PlaySound("Typing");
+            SoundManager.Instant.PlaySound(Constant.SFX.Typing);
             TriggerDialogue();
         }
 

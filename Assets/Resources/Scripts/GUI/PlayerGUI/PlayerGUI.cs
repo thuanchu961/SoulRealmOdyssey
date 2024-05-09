@@ -43,7 +43,7 @@ public class PlayerGUI : MonoBehaviour {
             Cursor.visible = true;
             gameOverMenu.SetActive(true);
             FindObjectOfType<SoundManager>().StopAllSongs();
-            SoundManager.PlaySound("GameOver");
+            SoundManager.Instant.PlaySound(Constant.SFX.GameOver);
         }
     }
 
@@ -93,7 +93,7 @@ public class PlayerGUI : MonoBehaviour {
     }
 
     public void PlayMenuSound() {
-        SoundManager.PlaySound("MenuSound");
+        SoundManager.Instant.PlaySound(Constant.SFX.MenuSound);
     }
 
     public GameObject DialoguePanel {

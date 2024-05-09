@@ -4,23 +4,13 @@ using System;
 using UnityEngine.Audio;
 using UnityEngine;
 
-public class SoundManager : MonoBehaviour {
+public class SoundManager : Singleton<SoundManager> 
+{
     public Sound[] sounds;
-
-    
     public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11,sound12, sound13, sound14, spikes, fireShot, mainMenu, typing, hurt, minotaur, minotaurBreath, woodBreak, ceramicBreak, gameOver, reload1, hydraLament, hydraBullet, stickyBullet, hydraObstacle, hydraDig, energyShot;
-    static AudioSource audioSrc;
+    private AudioSource audioSrc;
 
-    public static SoundManager instance;
-
-    void Awake() {
-        if (instance == null)
-            instance = this;
-        else {
-            Destroy(gameObject);
-            return;
-        }  
-
+    private void Awake() {
         DontDestroyOnLoad(gameObject);  
 
         foreach (Sound s in sounds) {
@@ -31,7 +21,7 @@ public class SoundManager : MonoBehaviour {
         }
     }
     
-    void Start() {
+    private void Start() {
         // Player
         hurt = Resources.Load<AudioClip>("Sounds/Mix/hurt");
 
@@ -110,118 +100,115 @@ public class SoundManager : MonoBehaviour {
         }
     }
     
-    public static void PlaySound (string clip) {
+    public void PlaySound (Constant.SFX clip) {
         switch (clip) {
             // Player
-            case "Hurt":
+            case Constant.SFX.Hurt:
                 audioSrc.PlayOneShot(hurt, 1f);
                 break;
-            case "ClothInventory":
+            case Constant.SFX.ClothInventory:
                 audioSrc.PlayOneShot(sound1, 0.5f);
                 break;
-            case "LeatherInventory":
+            case Constant.SFX.LeatherInventory:
                 audioSrc.PlayOneShot(sound2, 0.35f);
                 break;
-            case "ShotgunLoad":
+            case Constant.SFX.ShotgunLoad:
                 audioSrc.PlayOneShot(sound3, 0.35f);
                 break;
-            case "Shoot2":
+            case Constant.SFX.Shoot2:
                 audioSrc.PlayOneShot(sound4, 0.20f);
                 break;
-            case "Steps":
+            case Constant.SFX.Steps:
                 audioSrc.PlayOneShot(sound5, 0.5f);
                 break;
-            case "Reload1":
+            case Constant.SFX.Reload1:
                 audioSrc.PlayOneShot(reload1, 1f);
                 break;
 
             // Break
-            case "CeramicBreak":
+            case Constant.SFX.CeramicBreak:
                 audioSrc.PlayOneShot(ceramicBreak, 0.75f);
                 break;
-            case "WoodBreak":
+            case Constant.SFX.WoodBreak:
                 audioSrc.PlayOneShot(woodBreak, 0.75f);
                 break;
-
-
-            case "Explosion":
+            case Constant.SFX.Explosion:
                 audioSrc.PlayOneShot(sound6, 0.15f);
                 break;
-            case "MetalSlide":
+            case Constant.SFX.MetalSlide:
                 audioSrc.PlayOneShot(sound8, 1f);
                 break;
-            case "EnergyShot":
+            case Constant.SFX.EnergyShot:
                 audioSrc.PlayOneShot(energyShot, 0.75f);
                 break;
 
             // Enemy Minotaur
-            case "Minotaur":
+            case Constant.SFX.Minotaur:
                 audioSrc.PlayOneShot(minotaur, 0.75f);
                 break;
-            case "MinotaurBreath":
+            case Constant.SFX.MinotaurBreath:
                 audioSrc.PlayOneShot(minotaurBreath, 0.75f);
                 break;
             
-            // Boss 1
-            case "DragonRoar":
+            // Dragon
+            case Constant.SFX.DragonRoar:
                 audioSrc.PlayOneShot(sound9, 0.75f);
                 break;
-            case "DragonWings":
+            case Constant.SFX.DragonWings:
                 audioSrc.PlayOneShot(sound10, 0.125f);
                 break;
-            case "Fireball":
+            case Constant.SFX.Fireball:
                 audioSrc.PlayOneShot(sound11, 0.75f);
                 break;
-            case "Blitz":
+            case Constant.SFX.Blitz:
                 audioSrc.PlayOneShot(sound12, 0.75f);
                 break;
-            case "Burst":
+            case Constant.SFX.Burst:
                 audioSrc.PlayOneShot(sound13, 0.75f);
                 break;
-            case "DragonGrowl":
+            case Constant.SFX.DragonGrowl:
                 audioSrc.PlayOneShot(sound14, 1.75f);
                 break;
             
             // Traps
-            case "Spikes":
+            case Constant.SFX.Spikes:
                 audioSrc.PlayOneShot(spikes, 0.35f);
                 break;
-            case "FireShot":
+            case Constant.SFX.FireShot:
                 audioSrc.PlayOneShot(fireShot, 0.35f);
                 break;
 
             // Music 
 
             // GUI
-            case "Typing":
+            case Constant.SFX.Typing:
                 audioSrc.PlayOneShot(typing, 1f);
                 break;
-            case "MenuSound":
+            case Constant.SFX.MenuSound:
                 audioSrc.PlayOneShot(sound7, 1f);
                 break;
-            
-            case "GameOver":
+            case Constant.SFX.GameOver:
                 audioSrc.PlayOneShot(gameOver, 1f);
                 break;
 
             // Hydra
-            case "HydraLament":
+            case Constant.SFX.HydraLament:
                 audioSrc.PlayOneShot(hydraLament, 2f);
                 break;
 
-            case "StickyBullet":
+            case Constant.SFX.StickyBullet:
                 audioSrc.PlayOneShot(stickyBullet, 0.5f);
                 break;
 
-            case "HydraBullet":
+            case Constant.SFX.HydraBullet:
                 audioSrc.PlayOneShot(hydraBullet, 0.75f);
                 break;
 
-            case "Obstacle":
+            case Constant.SFX.Obstacle:
                 audioSrc.PlayOneShot(hydraObstacle, 0.125f);
                 break;
 
-            case "HydraDig":
+            case Constant.SFX.HydraDig:
                 audioSrc.PlayOneShot(hydraDig, 2f);
                 break;
         }

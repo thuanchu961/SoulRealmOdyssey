@@ -16,6 +16,6 @@ public class SaveAndExit : MonoBehaviour {
     }
 
     public void PlayMenuSound() {
-        SoundManager.PlaySound("MenuSound");
+        SoundManager.Instant.PlaySound(Constant.SFX.MenuSound);
     }
 }

@@ -52,7 +52,7 @@ public class PlayerTurret : MonoBehaviour {
         Rigidbody2D bulletRB = bulletInstantiated.GetComponent<Rigidbody2D>();
         bulletRB.AddForce(shootPoint.right * bulletForce, ForceMode2D.Impulse);
 
-        SoundManager.PlaySound("Shoot2");
+        SoundManager.Instant.PlaySound(Constant.SFX.Shoot2);
     }
 
     private void RotateTurretHead() {

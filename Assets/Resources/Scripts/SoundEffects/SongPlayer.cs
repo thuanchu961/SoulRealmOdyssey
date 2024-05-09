@@ -4,6 +4,6 @@ public class SongPlayer : MonoBehaviour {
     public string mainTheme;
     
     void Start() {
-        SoundManager.instance.Play(mainTheme);
+        SoundManager.Instant.Play(mainTheme);
     }
 }

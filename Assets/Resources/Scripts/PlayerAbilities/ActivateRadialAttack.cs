@@ -25,7 +25,7 @@ public class ActivateRadialAttack : MonoBehaviour {
             GameObject bulletInstantiated = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
             Rigidbody2D bulletRB = bulletInstantiated.GetComponent<Rigidbody2D>();
             bulletRB.AddForce(shootPoint.right * 15, ForceMode2D.Impulse);
-            SoundManager.PlaySound("EnergyShot");
+            SoundManager.Instant.PlaySound(Constant.SFX.EnergyShot);
             yield return new WaitForSeconds(0.025f);
         }
 

@@ -89,7 +89,7 @@ public class Shoot : MonoBehaviour {
     private IEnumerator ReloadTime() {
         reloading = true;
         reloadIndicator.SetActive(true);
-        SoundManager.PlaySound("Reload1");
+        SoundManager.Instant.PlaySound(Constant.SFX.Reload1);
         yield return new WaitForSeconds(reloadTime);
         ReloadCartridge();
         UpdateGUI();
@@ -112,7 +112,7 @@ public class Shoot : MonoBehaviour {
     }
 
     public void FillAmmo() {
-        SoundManager.PlaySound("Reload1");
+        SoundManager.Instant.PlaySound(Constant.SFX.Reload1);
         remainingBulletsInCartridge = cartridgeSize;
         remainingBulletsTotal = ammobagSize;
         UpdateGUI();
@@ -136,7 +136,7 @@ public class Shoot : MonoBehaviour {
         remainingBulletsInCartridge--;
         UpdateGUI();
 
-        SoundManager.PlaySound("Shoot2");
+        SoundManager.Instant.PlaySound(Constant.SFX.Shoot2);
     }
 
     public string bulletPath {

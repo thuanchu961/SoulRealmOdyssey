@@ -42,7 +42,7 @@ public class PlayerHealth : MonoBehaviour {
             healthBar.SetHealth(health);
             GameObject blood = Instantiate(blood1, transform.position, transform.rotation);
             blood.transform.SetParent(transform);
-            SoundManager.PlaySound("Hurt");
+            SoundManager.Instant.PlaySound(Constant.SFX.Hurt);
         }
     }
 

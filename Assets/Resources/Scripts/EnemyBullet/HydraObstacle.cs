@@ -16,6 +16,6 @@ public class HydraObstacle : MonoBehaviour {
     }
 
     public void PlaySound() {
-        SoundManager.PlaySound("Obstacle");
+        SoundManager.Instant.PlaySound(Constant.SFX.Obstacle);
     }
 }

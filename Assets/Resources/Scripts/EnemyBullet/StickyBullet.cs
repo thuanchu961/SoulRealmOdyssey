@@ -47,6 +47,6 @@ public class StickyBullet : MonoBehaviour {
     }
 
     public void PlaySound() {
-        SoundManager.PlaySound("StickyBullet");
+        SoundManager.Instant.PlaySound(Constant.SFX.StickyBullet);
     }
 }

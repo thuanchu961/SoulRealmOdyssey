@@ -2,7 +2,7 @@
 
 public class Minotaur_Attack : StateMachineBehaviour {   
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-       SoundManager.PlaySound("Minotaur");
+        SoundManager.Instant.PlaySound(Constant.SFX.Minotaur);
     }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {

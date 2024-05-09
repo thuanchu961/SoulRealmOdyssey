@@ -5,7 +5,7 @@ public class DestructiveObjects : MonoBehaviour {
     private int health;
     public int SetHealth;
 
-    public string soundName;
+    public Constant.SFX soundName;
     
     void Start() {
         animator = GetComponent<Animator>();
@@ -30,7 +30,7 @@ public class DestructiveObjects : MonoBehaviour {
 
     void DestroyObject() {
         animator.SetBool("Explode", true);
-        SoundManager.PlaySound(soundName);
+        SoundManager.Instant.PlaySound(soundName);
         Destroy(this);
     }
 }

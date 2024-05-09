@@ -34,7 +34,7 @@ public class BulletController : MonoBehaviour {
             !other.CompareTag("Ignore")) {
             Destroy(gameObject);
             Instantiate(explosion, transform.position, transform.rotation);
-            SoundManager.PlaySound("Explosion");
+            SoundManager.Instant.PlaySound(Constant.SFX.Explosion);
         }
     }
 

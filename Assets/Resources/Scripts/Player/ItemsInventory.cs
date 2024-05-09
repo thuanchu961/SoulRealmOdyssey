@@ -34,7 +34,7 @@ public class ItemsInventory : MonoBehaviour {
             
             Destroy(other.gameObject);
 
-            SoundManager.PlaySound("LeatherInventory");
+            SoundManager.Instant.PlaySound(Constant.SFX.LeatherInventory);
         }
     }
 }

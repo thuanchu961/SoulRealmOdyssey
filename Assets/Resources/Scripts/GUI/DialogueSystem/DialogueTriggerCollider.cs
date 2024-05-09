@@ -9,7 +9,7 @@ public class DialogueTriggerCollider : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Player")) {
-            SoundManager.PlaySound("Typing");
+            SoundManager.Instant.PlaySound(Constant.SFX.Typing);
             TriggerDialogue();
             Destroy(gameObject);
         }

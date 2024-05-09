@@ -7,15 +7,15 @@ public class Hydra : MonoBehaviour {
     public void PlaySound(string sound) {
         switch (sound) {
             case "HydraLament":
-                SoundManager.PlaySound("HydraLament");
+                SoundManager.Instant.PlaySound(Constant.SFX.HydraLament);
                 break;
 
             case "HydraDig":
-                SoundManager.PlaySound("HydraDig");
+                SoundManager.Instant.PlaySound(Constant.SFX.HydraDig);
                 break;
 
             case "HydraBullet":
-                SoundManager.PlaySound("HydraBullet");
+                SoundManager.Instant.PlaySound(Constant.SFX.HydraBullet);
                 break;
         }
     }

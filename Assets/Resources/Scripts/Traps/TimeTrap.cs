@@ -40,7 +40,7 @@ public class TimeTrap : MonoBehaviour {
         yield return new WaitForSeconds(waitTime);
         animator.SetBool("Working", true);
 
-        SoundManager.PlaySound("Spikes");
+        SoundManager.Instant.PlaySound(Constant.SFX.Spikes);
         
         if (onCollision) 
             playerHealth.decreaseHealth(damage);

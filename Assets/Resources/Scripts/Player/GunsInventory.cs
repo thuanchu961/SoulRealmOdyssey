@@ -63,7 +63,7 @@ public class GunsInventory : MonoBehaviour {
         UpdateGUI();
         gunsInInventory[activeWeapon].GetComponent<Shoot>().UpdateGUI();
 
-        SoundManager.PlaySound("ShotgunLoad");
+        SoundManager.Instant.PlaySound(Constant.SFX.ShotgunLoad);
     }
     
     void OnTriggerEnter2D(Collider2D other) {
@@ -86,7 +86,7 @@ public class GunsInventory : MonoBehaviour {
             ammoBagPanel.SetActive(true);
             cartridgePanel.SetActive(true);
 
-            SoundManager.PlaySound("LeatherInventory");
+            SoundManager.Instant.PlaySound(Constant.SFX.LeatherInventory);
         }
     }
 
