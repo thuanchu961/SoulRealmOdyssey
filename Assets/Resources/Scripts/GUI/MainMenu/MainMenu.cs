@@ -17,6 +17,12 @@ public class MainMenu : MonoBehaviour {
         tapToStartText.DOFade(0.25f, duration).SetEase(Ease.InOutBack).SetLoops(-1, LoopType.Yoyo);
     }
 
+    public void PlayGame(int sceneIndex)
+    {
+        PlayMenuSound();
+        SceneManager.LoadScene(sceneIndex);
+    }
+
     public void PlayTutorial() {
         PlayMenuSound();
         SceneManager.LoadScene("Tutorial");
@@ -40,6 +46,7 @@ public class MainMenu : MonoBehaviour {
     public void QuitGame() {
         PlayMenuSound();
         Application.Quit();
+        Debug.Log("Quit game");
     }
 
     public void PlayMenuSound() {

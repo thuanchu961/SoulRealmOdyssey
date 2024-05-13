@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class SceneController : Singleton<SceneController>
 {
     [SerializeField] private GameObject LoadingCanvas;
-    [SerializeField] private Image progressSlider;
+    [SerializeField] private Slider progressSlider;
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -19,13 +19,13 @@ public class SceneController : Singleton<SceneController>
     private IEnumerator LoadSceneCoroutine(int index)
     {
         LoadingCanvas.SetActive(true);
-        progressSlider.fillAmount = 0;
+        progressSlider.value = 0;
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(index);
         asyncOperation.allowSceneActivation = false;
         while (!asyncOperation.isDone)
         {
             float progress = Mathf.Clamp01(asyncOperation.progress / 0.9f);
-            progressSlider.fillAmount = progress;
+            progressSlider.value = progress;
             if (progress >= 0.9f)
             {
                 asyncOperation.allowSceneActivation = true;
