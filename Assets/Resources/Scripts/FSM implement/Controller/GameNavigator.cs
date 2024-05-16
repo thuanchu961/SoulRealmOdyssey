@@ -20,6 +20,10 @@ public class GameNavigator : Navigator, IEventListener
         {
             case GameEventState.GAME_INIT_STATE:
                 return (GameEventState.GAME_INIT_STATE.ToString(), null);
+
+            case GameEventState.GAME_SELECT_LEVEL_STATE:
+                GameSelectLevelStateData selectLevelStateData = (GameSelectLevelStateData)eventData;
+                return (GameEventState.GAME_SELECT_LEVEL_STATE.ToString(), selectLevelStateData);
         }
         return ("", null); 
     }

@@ -32,6 +32,12 @@ public class GameDependency : Dependency
             initStateDependency.SaveSystem = saveSystem;
             data = ConvertToType<T>(initStateDependency);
         }
+        else if (type == typeof(GameSelectLevelStateDependency))
+        {
+            GameSelectLevelStateDependency selectLevelStateDependency = new();
+            selectLevelStateDependency.SaveSystem = saveSystem;
+            data = ConvertToType<T>(selectLevelStateDependency);
+        }
         else
         {
             data = ConvertToType<T>(null);

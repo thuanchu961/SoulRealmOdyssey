@@ -20,5 +20,5 @@ public enum GameEventState
 { 
     GAME_INIT_STATE,
     GAME_START_MENU_STATE,
-
+    GAME_SELECT_LEVEL_STATE,
 }

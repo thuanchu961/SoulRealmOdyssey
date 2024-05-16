@@ -1175,6 +1175,7 @@ GameObject:
   - component: {fileID: 491385851}
   - component: {fileID: 491385850}
   - component: {fileID: 491385849}
+  - component: {fileID: 491385852}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1308,6 +1309,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491385847}
   m_CullTransparentMesh: 0
+--- !u!114 &491385852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491385847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9680e6e7696e034a97690a304fc7946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: 2
 --- !u!1 &550194486
 GameObject:
   m_ObjectHideFlags: 0
@@ -1490,6 +1504,7 @@ GameObject:
   - component: {fileID: 563068115}
   - component: {fileID: 563068114}
   - component: {fileID: 563068113}
+  - component: {fileID: 563068116}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1623,6 +1638,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563068111}
   m_CullTransparentMesh: 0
+--- !u!114 &563068116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563068111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9680e6e7696e034a97690a304fc7946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: 4
 --- !u!1 &569282722
 GameObject:
   m_ObjectHideFlags: 0
@@ -3573,6 +3601,7 @@ GameObject:
   - component: {fileID: 981363968}
   - component: {fileID: 981363967}
   - component: {fileID: 981363966}
+  - component: {fileID: 981363969}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -3643,31 +3672,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 981363967}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1960869064}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: PlayTutorial
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1960869065}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActiveLevel
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &981363967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3706,6 +3711,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981363964}
   m_CullTransparentMesh: 0
+--- !u!114 &981363969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981363964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9680e6e7696e034a97690a304fc7946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: 1
 --- !u!1 &1006694523
 GameObject:
   m_ObjectHideFlags: 0
@@ -6688,6 +6706,7 @@ GameObject:
   - component: {fileID: 1774491624}
   - component: {fileID: 1774491623}
   - component: {fileID: 1774491622}
+  - component: {fileID: 1774491625}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -6821,6 +6840,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1774491620}
   m_CullTransparentMesh: 0
+--- !u!114 &1774491625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774491620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9680e6e7696e034a97690a304fc7946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: 3
 --- !u!1 &1804364730
 GameObject:
   m_ObjectHideFlags: 0

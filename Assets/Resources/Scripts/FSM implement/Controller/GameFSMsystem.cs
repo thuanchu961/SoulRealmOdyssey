@@ -6,9 +6,11 @@ using System;
 public class GameFSMsystem : FSMSystem
 {
     private FSMState initState;
+    private FSMState selectLevelState;
     private void Awake()
     {
         initState = new GameInitState();
+        selectLevelState = new GameSelectLevelState();
     }
     public override void SetupStateData<T>(T data)
     {
@@ -16,6 +18,9 @@ public class GameFSMsystem : FSMSystem
         {
             GameInitStateDependency initStateDependency = dependency.GetStateData<GameInitStateDependency>();
             initState.SetUp(initStateDependency);
+
+            GameSelectLevelStateDependency selectLevelStateDependency = dependency.GetStateData<GameSelectLevelStateDependency>();
+            selectLevelState.SetUp(selectLevelStateDependency);
         }
     }
     public override void GotoState(string eventName, object data)
@@ -25,6 +30,10 @@ public class GameFSMsystem : FSMSystem
         {
             case GameEventState.GAME_INIT_STATE:
                 GotoState(initState, data);
+                break;
+
+            case GameEventState.GAME_SELECT_LEVEL_STATE:
+                GotoState(selectLevelState, data);
                 break;
         }
     }

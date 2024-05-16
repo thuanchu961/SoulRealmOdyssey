@@ -19,5 +19,6 @@ public struct UserInputChanel : EventListener<UserInputChanel>
     }
 
     public const string SELECT_CHARACTER_PREVIEW_CLICK = "SELECT_CHARACTER_PREVIEW_CLICK";
+    public const string SELECT_LEVEL_CLICK = "SELECT_LEVEL_CLICK";
 
 }
