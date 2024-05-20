@@ -19,6 +19,13 @@ public class UserInputListenner : MonoBehaviour, EventListener<UserInputChanel>
                 GameEvent gameEvent = new(GameEventState.GAME_SELECT_LEVEL_STATE.ToString(), selectLevelStateData);
                 ObserverManager.TriggerEvent<GameEvent>(gameEvent);
                 break;
+
+            case UserInputChanel.SELECT_SLOT_CLICK:
+                GameSelectSlotStateData selectSlotStateData = new();
+                selectSlotStateData.SlotIndex = (int)eventType.EventData;
+                gameEvent = new(GameEventState.GAME_SELECT_SLOT_STATE.ToString(), selectSlotStateData);
+                ObserverManager.TriggerEvent<GameEvent>(gameEvent);
+                break;
         }
     }
 

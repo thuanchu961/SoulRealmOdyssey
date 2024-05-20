@@ -600,6 +600,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126616196}
   m_CullTransparentMesh: 0
+--- !u!1 &243802466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 243802469}
+  - component: {fileID: 243802468}
+  - component: {fileID: 243802467}
+  m_Layer: 0
+  m_Name: Save&LoadData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &243802467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243802466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3077789e218af5942bace90d8be5ee4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &243802468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243802466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30487060af087c242a4bdf818bbff26c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &243802469
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243802466}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &246580873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1739,6 +1796,7 @@ GameObject:
   - component: {fileID: 637805939}
   - component: {fileID: 637805938}
   - component: {fileID: 637805937}
+  - component: {fileID: 637805940}
   m_Layer: 5
   m_Name: LoadButtom
   m_TagString: Untagged
@@ -1811,57 +1869,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1225112363}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 978843753}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1960869064}
         m_TargetAssemblyTypeName: 
         m_MethodName: PlayMenuSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1960869065}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActiveSlot
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1960869065}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: CheckSaveLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1909,6 +1919,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 637805935}
   m_CullTransparentMesh: 0
+--- !u!114 &637805940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637805935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547f65cffe32a474e808af9381d6815b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotId: 2
 --- !u!1 &651593617
 GameObject:
   m_ObjectHideFlags: 0
@@ -3154,7 +3177,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 915821866}
-  - component: {fileID: 915821865}
   - component: {fileID: 915821864}
   - component: {fileID: 915821863}
   - component: {fileID: 915821862}
@@ -3219,6 +3241,7 @@ MonoBehaviour:
   saveSystem: {fileID: 1960869065}
   mainMenuObject: {fileID: 959387782}
   loadSelection: {fileID: 1225112363}
+  levelSelection: {fileID: 978843753}
   playButton: {fileID: 825355060}
   quitButton: {fileID: 866571274}
   mainMenu: {fileID: 1960869064}
@@ -3232,18 +3255,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b500ac7febcf7e458663a28c3f20ca6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &915821865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 915821859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30487060af087c242a4bdf818bbff26c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &915821866
@@ -4438,7 +4449,7 @@ GameObject:
   - component: {fileID: 1225112366}
   - component: {fileID: 1225112365}
   m_Layer: 5
-  m_Name: LoadSelection
+  m_Name: SlotSelection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4786,6 +4797,7 @@ GameObject:
   - component: {fileID: 1382464253}
   - component: {fileID: 1382464252}
   - component: {fileID: 1382464251}
+  - component: {fileID: 1382464254}
   m_Layer: 5
   m_Name: LoadButtom
   m_TagString: Untagged
@@ -4858,57 +4870,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1225112363}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 978843753}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1960869064}
         m_TargetAssemblyTypeName: 
         m_MethodName: PlayMenuSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1960869065}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActiveSlot
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1960869065}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: CheckSaveLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4956,6 +4920,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382464249}
   m_CullTransparentMesh: 0
+--- !u!114 &1382464254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382464249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547f65cffe32a474e808af9381d6815b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotId: 1
 --- !u!1 &1383236719
 GameObject:
   m_ObjectHideFlags: 0
@@ -6012,6 +5989,7 @@ GameObject:
   - component: {fileID: 1577907532}
   - component: {fileID: 1577907531}
   - component: {fileID: 1577907530}
+  - component: {fileID: 1577907533}
   m_Layer: 5
   m_Name: LoadButtom
   m_TagString: Untagged
@@ -6084,57 +6062,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1225112363}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 978843753}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1960869064}
         m_TargetAssemblyTypeName: 
         m_MethodName: PlayMenuSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1960869065}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActiveSlot
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1960869065}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: CheckSaveLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6182,6 +6112,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577907528}
   m_CullTransparentMesh: 0
+--- !u!114 &1577907533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577907528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547f65cffe32a474e808af9381d6815b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotId: 3
 --- !u!1 &1588479707
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class GameDependency : Dependency
     [Header("=====Main Menu Dependency======")]
     [SerializeField] private GameObject mainMenuObject;
     [SerializeField] private GameObject loadSelection;
+    [SerializeField] private GameObject levelSelection;
     [SerializeField] private Button playButton;
     [SerializeField] private Button quitButton;
     [SerializeField] private MainMenu mainMenu;
@@ -37,6 +38,14 @@ public class GameDependency : Dependency
             GameSelectLevelStateDependency selectLevelStateDependency = new();
             selectLevelStateDependency.SaveSystem = saveSystem;
             data = ConvertToType<T>(selectLevelStateDependency);
+        }
+        else if (type == typeof(GameSelectSlotStateDependency))
+        {
+            GameSelectSlotStateDependency selectSlotStateDependency = new();
+            selectSlotStateDependency.SaveSystem = saveSystem;
+            selectSlotStateDependency.LevelSelection = levelSelection;
+            selectSlotStateDependency.SlotSelection = loadSelection;
+            data = ConvertToType<T>(selectSlotStateDependency);
         }
         else
         {

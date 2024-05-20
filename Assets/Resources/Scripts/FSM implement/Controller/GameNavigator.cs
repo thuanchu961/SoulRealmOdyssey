@@ -24,6 +24,10 @@ public class GameNavigator : Navigator, IEventListener
             case GameEventState.GAME_SELECT_LEVEL_STATE:
                 GameSelectLevelStateData selectLevelStateData = (GameSelectLevelStateData)eventData;
                 return (GameEventState.GAME_SELECT_LEVEL_STATE.ToString(), selectLevelStateData);
+
+            case GameEventState.GAME_SELECT_SLOT_STATE:
+                GameSelectSlotStateData selectSlotStateData = (GameSelectSlotStateData)eventData;
+                return (GameEventState.GAME_SELECT_SLOT_STATE.ToString(), selectSlotStateData);
         }
         return ("", null); 
     }

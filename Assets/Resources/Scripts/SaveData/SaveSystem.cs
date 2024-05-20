@@ -8,12 +8,14 @@ public static class SaveSystem {
 
     public static void SaveGameData () {
         BinaryFormatter formatter = new BinaryFormatter();
-        
         string path = Application.persistentDataPath + $"/GunnedDownData{activeSaveSlot}.save";
 
+        string jsonPath = $"/player_data{activeSaveSlot}.json";
         GameData gameData = LoadGameData(activeSaveSlot);
+        JsonDataServiceManager.Instant.SaveData<GameData>(jsonPath, gameData, true);
+        if (gameData == null || gameData.level < ActiveLevelForSaving)
+        {
 
-        if (gameData == null || gameData.level < ActiveLevelForSaving) {
             FileStream stream = new FileStream(path, FileMode.Create);
             GameData data = new GameData();
             formatter.Serialize(stream, data);
@@ -23,12 +25,18 @@ public static class SaveSystem {
 
     public static GameData LoadGameData(int slotToLoad) {
         string path = Application.persistentDataPath + $"/GunnedDownData{slotToLoad}.save";
-        if (!File.Exists(path))
+        string jsonPath = $"/player_data{slotToLoad}.json";
+        string relativePath = Application.persistentDataPath + jsonPath;
+        if (!File.Exists(path) || !File.Exists(relativePath))
             return null;
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream stream = new FileStream(path, FileMode.Open);
 
         GameData data = formatter.Deserialize(stream) as GameData;
+        if (data == null)
+        {
+             data = JsonDataServiceManager.Instant.LoadData<GameData>(jsonPath, true);
+        }
         stream.Close();
         return data;
     }

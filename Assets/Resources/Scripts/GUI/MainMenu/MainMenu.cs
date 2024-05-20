@@ -17,32 +17,6 @@ public class MainMenu : MonoBehaviour {
         tapToStartText.DOFade(0.25f, duration).SetEase(Ease.InOutBack).SetLoops(-1, LoopType.Yoyo);
     }
 
-    public void PlayGame(int sceneIndex)
-    {
-        PlayMenuSound();
-        SceneManager.LoadScene(sceneIndex);
-    }
-
-    public void PlayTutorial() {
-        PlayMenuSound();
-        SceneManager.LoadScene("Tutorial");
-    }
-
-    public void PlayLevel1() {
-        PlayMenuSound();
-        SceneManager.LoadScene("Level3");
-    }
-    
-    public void PlayLevel2() {
-        PlayMenuSound();
-        SceneManager.LoadScene("Level4");
-    }
-
-    public void PlayLevel3() {
-        PlayMenuSound();
-        SceneManager.LoadScene("Level2");
-    }
-
     public void QuitGame() {
         PlayMenuSound();
         Application.Quit();
