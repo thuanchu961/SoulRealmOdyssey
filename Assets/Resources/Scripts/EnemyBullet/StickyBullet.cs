@@ -26,7 +26,7 @@ public class StickyBullet : MonoBehaviour {
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             gameObject.GetComponent<Animator>().SetTrigger("hit");
             hit = true;
-            collision.gameObject.GetComponent<PlayerHealth>().decreaseHealth(damage);
+            collision.gameObject.GetComponent<PlayerHealth>().DecreaseHealth(damage);
             damage = 2;
             PlaySound();
         }
@@ -38,7 +38,7 @@ public class StickyBullet : MonoBehaviour {
     private void OnTriggerStay2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Player") && (Time.time - SavedTime) > DelayTime) {
             SavedTime = Time.time;
-            collision.gameObject.GetComponent<PlayerHealth>().decreaseHealth(damage);
+            collision.gameObject.GetComponent<PlayerHealth>().DecreaseHealth(damage);
         }
     }
 

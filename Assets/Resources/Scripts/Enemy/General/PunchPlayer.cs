@@ -37,6 +37,6 @@ public class PunchPlayer : MonoBehaviour {
     }
 
     void HitPlayer() {
-        playerHealth.decreaseHealth(damage);
+        playerHealth.DecreaseHealth(damage);
     }
 }

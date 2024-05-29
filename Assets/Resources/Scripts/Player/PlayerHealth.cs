@@ -36,7 +36,7 @@ public class PlayerHealth : MonoBehaviour {
         }
     }
 
-    public void decreaseHealth(int damage) {
+    public void DecreaseHealth(int damage) {
         if (!invinsible) {
             health = Math.Max(0, health - damage);
             healthBar.SetHealth(health);

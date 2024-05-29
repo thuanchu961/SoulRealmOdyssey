@@ -13,7 +13,7 @@ public class EnemyBulletController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player"))
-            playerHealth.decreaseHealth(damage);
+            playerHealth.DecreaseHealth(damage);
         
         if (!other.CompareTag("Enemy") &&
             !other.CompareTag("Bullet") &&

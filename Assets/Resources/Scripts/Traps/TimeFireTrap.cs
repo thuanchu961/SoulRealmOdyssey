@@ -24,7 +24,7 @@ public class TimeFireTrap : MonoBehaviour {
 
     void Update() {
         if (ableToDamage && onCollision) { 
-            StartCoroutine(activateDamageBox());
+            StartCoroutine(ActivateDamageBox());
             ableToDamage = false;
         }
     }
@@ -39,7 +39,7 @@ public class TimeFireTrap : MonoBehaviour {
             onCollision = false;
     }
 
-    IEnumerator activateDamageBox() {
+    IEnumerator ActivateDamageBox() {
         yield return new WaitForSeconds(waitTime);
         animator.SetBool("Working", true);
         childLight.gameObject.SetActive(true);
@@ -47,7 +47,7 @@ public class TimeFireTrap : MonoBehaviour {
         SoundManager.Instant.PlaySound(Constant.SFX.FireShot);
 
         if (onCollision) 
-            playerHealth.decreaseHealth(damage);
+            playerHealth.DecreaseHealth(damage);
 
         yield return new WaitForSeconds(durationTime);
         animator.SetBool("Working", false);
