@@ -10,6 +10,8 @@ public class SoundManager : Singleton<SoundManager>
     public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11,sound12, sound13, sound14, spikes, fireShot, mainMenu, typing, hurt, minotaur, minotaurBreath, woodBreak, ceramicBreak, gameOver, reload1, hydraLament, hydraBullet, stickyBullet, hydraObstacle, hydraDig, energyShot;
     private AudioSource audioSrc;
 
+    [SerializeField] private AudioSource musicSource;
+
     private void Awake() {
         DontDestroyOnLoad(gameObject);  
 
@@ -212,5 +214,21 @@ public class SoundManager : Singleton<SoundManager>
                 audioSrc.PlayOneShot(hydraDig, 2f);
                 break;
         }
+    }
+
+    public void PlayMusic(AudioClip audio, float volume = 0.5f, bool isLoop = false, Action callback = null)
+    {
+        GameObject audioObject = new(audio.name);
+        AudioSource source = audioObject.AddComponent<AudioSource>();
+        source.gameObject.AddComponent<AudioSourceController>();
+        source.transform.SetParent(null);
+        source.transform.position = Vector3.zero;
+        source.gameObject.name = audio.name;
+        source.playOnAwake = false;
+        source.clip = audio;
+        source.volume = volume;
+        source.loop = isLoop;
+        source.Play();
+        callback?.Invoke();
     }
 }

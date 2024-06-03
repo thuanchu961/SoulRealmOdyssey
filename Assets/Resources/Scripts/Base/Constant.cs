@@ -54,7 +54,13 @@ public class Constant
         HydraDig,
     }
 
+    public enum GENERAL_KEY
+    {
+        PLAYER_NAME,
+        MUSIC_VOLUME,
+        SOUND_VOLUME,
 
+    }
 
 
 }

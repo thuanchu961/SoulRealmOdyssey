@@ -24,6 +24,7 @@ public class GameInitState : FSMState
     private async void DoWork()
     {
         token = cancellationTokenSource.Token;
+        SoundManager.Instant.PlayMusic(dependency.BGM, 0.5f, true, null);
         dependency.PlayButton.onClick.AddListener(OnPlayButtonClick);
         dependency.QuitButton.onClick.AddListener(OnQuitButtonClick);
         await Task.Delay(1000, cancellationToken: token);
@@ -64,4 +65,5 @@ public class GameInitStateDependency
     public Button QuitButton { get; set; }
     public CallSaveSystem SaveSystem { get; set; }
     public MainMenu MainMenu { get; set; }
+    public AudioClip BGM { get; set; }
 }

@@ -9,6 +9,7 @@ public class GameDependency : Dependency
     [Space(5)]
     [Header("=====Common Dependency======")]
     [SerializeField] private CallSaveSystem saveSystem;
+    [SerializeField] private AudioClip backgroundMusic;
     [Space(5)]
     [Header("=====Main Menu Dependency======")]
     [SerializeField] private GameObject mainMenuObject;
@@ -31,6 +32,7 @@ public class GameDependency : Dependency
             initStateDependency.QuitButton = quitButton;
             initStateDependency.MainMenu = mainMenu;
             initStateDependency.SaveSystem = saveSystem;
+            initStateDependency.BGM = backgroundMusic;
             data = ConvertToType<T>(initStateDependency);
         }
         else if (type == typeof(GameSelectLevelStateDependency))
