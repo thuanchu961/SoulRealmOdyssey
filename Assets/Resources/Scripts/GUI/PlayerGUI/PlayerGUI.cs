@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerGUI : MonoBehaviour {
+public class PlayerGUI : MonoBehaviour, IEventListener
+{
     private bool pauseMenuActive;
     private bool inventoryMenuActive;
     public GameObject pauseMenuBackground;
@@ -9,12 +10,16 @@ public class PlayerGUI : MonoBehaviour {
     public GameObject pauseMenu;
     public GameObject dialogueMenu;
     public GameObject gameOverMenu;
+    public GameObject gameVictoryMenu;
     public GameObject marineSelection;
 
     private Scene activeScene;
     private DialogueManager dialogueManager;
     private PlayerHealth playerHealth;
-    
+    private void Awake()
+    {
+        EventManager.Instant.AddListener(this, EventChanelID.GameState, EventChanelID.GamePlay);
+    }
     void Start() {
         pauseMenuActive = false;
         inventoryMenuActive = false;
@@ -96,7 +101,40 @@ public class PlayerGUI : MonoBehaviour {
         SoundManager.Instant.PlaySound(Constant.SFX.MenuSound);
     }
 
+    public void ShowVictoryPanel()
+    {
+        Time.timeScale = 0;
+        pauseMenuBackground.SetActive(true);
+        Cursor.visible = true;
+        gameVictoryMenu.SetActive(true);
+        SoundManager.Instant.StopAllSongs();
+        SoundManager.Instant.PlaySound(Constant.SFX.GameOver);
+    }
+
+    public void NextLevel()
+    {
+        SceneController.Instant.LoadScene(activeScene.buildIndex + 1);
+    }
+
+    public void OnReceiveEvent(EventMessage message)
+    {
+        if(message.eventChanelId == EventChanelID.GamePlay)
+        {
+            switch (message.eventName)
+            {
+                case EventName.GamePlay.GAME_PLAY_END:
+                    ShowVictoryPanel();
+                    break;
+            }
+        }
+    }
+
     public GameObject DialoguePanel {
         get { return dialogueMenu; }
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.Instant.RemoveListener(this);
     }
 }

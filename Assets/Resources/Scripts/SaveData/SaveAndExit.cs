@@ -12,8 +12,9 @@ public class SaveAndExit : MonoBehaviour {
         PlayMenuSound();
         FindObjectOfType<SoundManager>().StopAllSongs();
         ItemsInventory.itemsInInventory.Clear();
-        SceneController.Instant.LoadScene((int)Constant.SCENE.MAIN_MENU);
+        //SceneController.Instant.LoadScene((int)Constant.SCENE.MAIN_MENU);
         //SceneManager.LoadScene("MainMenu");
+        EventManager.Instant.Push(EventChanelID.GamePlay, EventName.GamePlay.GAME_PLAY_END, null);
     }
 
     public void PlayMenuSound() {
