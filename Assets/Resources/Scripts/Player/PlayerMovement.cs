@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
@@ -14,7 +15,7 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField]
     [Range(0f, 100f)]
     private float speed;
-    
+    [SerializeField] private Joystick joystick;
     void Start() {
         InvokeRepeating ("PlaySound", 0.0f, Random.Range(0.25f, 0.45f));
         canDust = true;
@@ -31,8 +32,14 @@ public class PlayerMovement : MonoBehaviour {
 
     // Player movement
     void Movement() {
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN
         speedX = Input.GetAxis("Horizontal") * speed;
         speedY = Input.GetAxis("Vertical") * speed;
+#elif PLATFORM_ANDROID
+        speedX = joystick.Horizontal  * speed;
+        speedY = joystick.Vertical * speed;
+#endif
+
         movementSpeed = new Vector3(speedX, speedY, 0f);
 
         if (movementSpeed.magnitude > 0 && canDust)
