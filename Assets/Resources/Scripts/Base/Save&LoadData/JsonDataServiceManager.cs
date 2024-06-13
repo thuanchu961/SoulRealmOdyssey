@@ -134,12 +134,9 @@ public class JsonDataServiceManager : Singleton<JsonDataServiceManager>, IDataSe
         return JsonConvert.DeserializeObject<T>(result);
     }
 
-    private  string EncryptString(string input, string key) //mã hóa bằng thuật toán XOR
+    private  string EncryptString(string input, string key)
     {
-        // Chuyển đổi chuỗi key thành một mảng byte
         byte[] keyBytes = Encoding.ASCII.GetBytes(key);
-
-        // Chuyển đổi chuỗi input thành một mảng byte
         byte[] inputBytes = Encoding.ASCII.GetBytes(input);
 
         // Mã hóa bằng phép XOR giữa từng byte của input và key
@@ -159,10 +156,9 @@ public class JsonDataServiceManager : Singleton<JsonDataServiceManager>, IDataSe
 
     private string DecryptString(string input, string key)
     {
-        // Chuyển đổi chuỗi key thành một mảng byte
         byte[] keyBytes = Encoding.ASCII.GetBytes(key);
 
-        // Chuyển đổi chuỗi input từ hex thành một mảng byte
+
         byte[] inputBytes = new byte[input.Length / 2];
         for (int i = 0; i < input.Length; i += 2)
         {
