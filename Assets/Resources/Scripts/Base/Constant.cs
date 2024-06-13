@@ -62,5 +62,12 @@ public class Constant
 
     }
 
+    public enum ITEMS 
+    {
+        AmmoCrate,
+        HealBig,
+        HealSmall,
+        end
+    }
 
 }
