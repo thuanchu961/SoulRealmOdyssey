@@ -15,7 +15,7 @@ public class EnemyDeath : MonoBehaviour {
         var itemName = GetEnumStringByIndex(typeof(Constant.ITEMS), itemIndex);
         itemToSpawn = (GameObject) Resources.Load($"Prefabs/GeneralItems/{itemName}", typeof(GameObject));
     }
-    public static string GetEnumStringByIndex(Type enumType, int index)
+    public string GetEnumStringByIndex(Type enumType, int index)
     {
         Array enumValues = Enum.GetValues(enumType);
 
