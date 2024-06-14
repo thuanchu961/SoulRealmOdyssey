@@ -42,14 +42,9 @@ public class PlayerGUI : MonoBehaviour, IEventListener
         if (Input.GetKeyDown(KeyCode.E) && !pauseMenuActive && !dialogueCheck && !playerHealth.IsKill && !marineSelection.activeSelf)
             ShowInventory();
 
-        if (playerHealth.IsKill && Time.timeScale != 0) {
-            Time.timeScale = 0;
-            pauseMenuBackground.SetActive(true);
-            Cursor.visible = true;
-            gameOverMenu.SetActive(true);
-            FindObjectOfType<SoundManager>().StopAllSongs();
-            SoundManager.Instant.PlaySound(Constant.SFX.GameOver);
-        }
+        //if (playerHealth.IsKill && Time.timeScale != 0) {
+        //    ShowLosePanel();
+        //}
     }
 
     public void ShowPauseMenu() {
@@ -110,6 +105,15 @@ public class PlayerGUI : MonoBehaviour, IEventListener
         SoundManager.Instant.StopAllSongs();
         SoundManager.Instant.PlaySound(Constant.SFX.GameOver);
     }
+    public void ShowLosePanel()
+    {
+        Time.timeScale = 0;
+        pauseMenuBackground.SetActive(true);
+        Cursor.visible = true;
+        gameOverMenu.SetActive(true);
+        SoundManager.Instant.StopAllSongs();
+        SoundManager.Instant.PlaySound(Constant.SFX.GameOver);
+    }
 
     public void NextLevel()
     {
@@ -122,8 +126,12 @@ public class PlayerGUI : MonoBehaviour, IEventListener
         {
             switch (message.eventName)
             {
-                case EventName.GamePlay.GAME_PLAY_END:
+                case EventName.GamePlay.GAME_PLAY_WIN:
                     ShowVictoryPanel();
+                    break;
+
+                case EventName.GamePlay.GAME_PLAY_LOSE:
+                    ShowLosePanel();
                     break;
             }
         }

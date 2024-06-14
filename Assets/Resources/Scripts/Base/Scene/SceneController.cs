@@ -24,7 +24,7 @@ public class SceneController : Singleton<SceneController>
         asyncOperation.allowSceneActivation = false;
         while (!asyncOperation.isDone)
         {
-            float progress = Mathf.Clamp01(asyncOperation.progress / 0.9f);
+            float progress = Mathf.Clamp01(asyncOperation.progress / 0.5f);
             progressSlider.value = progress;
             if (progress >= 0.9f)
             {

@@ -68,6 +68,16 @@ public static class EventName
         public const string GAME_PLAY_END = "GamePlay.GAME_PLAY_END";
 
         /// <summary>
+        /// S? ki?n k?t thúc game play
+        /// </summary>
+        public const string GAME_PLAY_WIN = "GamePlay.GAME_PLAY_WIN";
+
+        /// <summary>
+        /// S? ki?n k?t thúc game play
+        /// </summary>
+        public const string GAME_PLAY_LOSE = "GamePlay.GAME_PLAY_LOSE";
+
+        /// <summary>
         /// S? ki?n k?t thúc QUIT_LESSON
         /// </summary>
         public const string QUIT_LESSON = "GamePlay.QUIT_LESSON";

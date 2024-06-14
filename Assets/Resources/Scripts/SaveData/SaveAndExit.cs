@@ -14,7 +14,7 @@ public class SaveAndExit : MonoBehaviour {
         ItemsInventory.itemsInInventory.Clear();
         //SceneController.Instant.LoadScene((int)Constant.SCENE.MAIN_MENU);
         //SceneManager.LoadScene("MainMenu");
-        EventManager.Instant.Push(EventChanelID.GamePlay, EventName.GamePlay.GAME_PLAY_END, null);
+        EventManager.Instant.Push(EventChanelID.GamePlay, EventName.GamePlay.GAME_PLAY_WIN, null);
     }
 
     public void PlayMenuSound() {

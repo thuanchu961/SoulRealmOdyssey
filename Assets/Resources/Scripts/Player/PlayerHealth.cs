@@ -33,6 +33,7 @@ public class PlayerHealth : MonoBehaviour {
     void Update() {   
         if (health == 0 && !isKill) {
             isKill = true;
+            EventManager.Instant.Push(EventChanelID.GamePlay, EventName.GamePlay.GAME_PLAY_LOSE, null);
         }
     }
 
