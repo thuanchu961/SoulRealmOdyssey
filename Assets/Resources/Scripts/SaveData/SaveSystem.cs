@@ -33,10 +33,10 @@ public static class SaveSystem {
         FileStream stream = new FileStream(path, FileMode.Open);
 
         GameData data = formatter.Deserialize(stream) as GameData;
-        if (data == null)
-        {
-             data = JsonDataServiceManager.Instant.LoadData<GameData>(jsonPath, true);
-        }
+        //if (data == null)
+        //{
+        //     data = JsonDataServiceManager.Instant.LoadData<GameData>(jsonPath, true);
+        //}
         stream.Close();
         return data;
     }
